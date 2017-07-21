@@ -48,7 +48,9 @@ else
     wget https://dl.eff.org/certbot-auto
     chmod a+x certbot-auto
     echo [+] generating certifcates
-    mv /etc/letsencrypt/ /etc/letsencrypt_bak_${now}/
+    if [ -e /etc/letsencrypt ]
+      mv /etc/letsencrypt/ /etc/letsencrypt_bak_${now}/
+    fi
     DOMAINS=( $(echo $1 | tr ',' ' ') )
     for DOMAIN in "${DOMAINS[@]}"
     do
