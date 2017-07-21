@@ -49,6 +49,7 @@ else
     chmod a+x certbot-auto
     echo [+] generating certifcates
     if [ -e /etc/letsencrypt ]
+    then
       mv /etc/letsencrypt/ /etc/letsencrypt_bak_${now}/
     fi
     DOMAINS=( $(echo $1 | tr ',' ' ') )
