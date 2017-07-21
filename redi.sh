@@ -4,6 +4,8 @@ now=$(date +"%s")
 
 echo [+] updating
 apt-get update
+# install depends on wget
+apt-get install --assume-yes wget
 
 if [ "$2" = "dns" ]
 then
